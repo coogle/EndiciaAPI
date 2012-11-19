@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Soap/Client.php';
+
 class Endicida
 {
 	const TEST_WSDL = "https://www.envmgr.com/LabelService/EwsLabelService.asmx?WSDL";
@@ -13,7 +15,7 @@ class Endicida
 	
 	function __construct() 
 	{
-		$this->_client = new SoapClient(self::TEST_WSDL);
+		$this->_client = new Endicia_Soap_Client(self::TEST_WSDL);
 	}
 	
 	public function setClient(SoapClient $client) 
